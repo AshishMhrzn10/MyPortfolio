@@ -25,7 +25,7 @@ SECRET_KEY = 'q(+(y6gx_31_$)7eh8=eq8p2v+7$nxoncpcu7qf&29b_zf3)$('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://ashishmaharjan.herokuapp.com/']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -131,3 +132,8 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+import dj_database_url
+prod_db = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
