@@ -354,12 +354,16 @@ h6 {
     text-transform: uppercase;
     background: #FF0000;
     margin-top: 20px;
-    /width: 160px;
+    width: 160px;
     border-radius: 30px;
     margin-left: 5px;
     margin-right: 5px;
     font-size: 14px;
 
+}
+
+.icons{
+    margin-top: 170px;
 }
 
 /*--- 4. Banner area css ends ---*/
@@ -387,7 +391,7 @@ h6 {
     font-size: 22px;
     line-height: 34px;
     margin: 20px 0 30px;
-    /width: 80%;
+    width: 80%;
 }
 .about-left a {
     display: inline-block;
@@ -396,7 +400,7 @@ h6 {
     text-transform: uppercase;
     background: #FF0000;
     margin-top: 20px;
-    /width: 160px;
+    width: 180px;
     border-radius: 30px;
     margin-left: 5px;
     margin-right: 5px;

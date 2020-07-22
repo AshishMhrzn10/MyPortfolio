@@ -5,12 +5,21 @@
     <div class="bg-overlay black"></div>
     <div class="containter">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-11">
                 <div class="welcome-text">
                     <div class="name-area wow fadeInDown" data-wow-delay="0.2s">Hello, my name is Ashish</div>
                     <h1 class="wow fadeInDown" data-wow-delay="0.4s">Create Innovative application with me</h1>
                     <a href="#about" class="my-btn-1 wow fadeInDown" data-wow-delay="0.6s">Learn more</a>
                     <a href="#contact" class="my-btn-2 wow fadeInDown" data-wow-delay="0.8s">Get in touch</a>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="icons hidden-xs">
+                    <a href="https://www.facebook.com/amaharjan1032" target="blank"><i class="fa fa-facebook-square" style="font-size:52px;color:#3b5999"></i></a>
+                    <a href="https://www.instagram.com/ashish_mhrzn10/" target="blank"><i class="fa fa-instagram" style="font-size:52px;color:#e4405f"></i></a>
+                    <a href="https://www.linkedin.com/in/%C3%A3shish-mhrzn-59b7b4188/" target="blank"><i class="fa fa-linkedin-square" style="font-size:52px;color:#0077B5"></i></a>
+                    <a href="https://github.com/AshishMhrzn10" target="blank"><i class="fa fa-github-square" style="font-size:52px;color:white;"></i></a>
+                    <a href="mailto: amaharjan1032@gmail.com" target="blank"><i class="fa fa-envelope" style="font-size:46px;color:white;"></i></a>
                 </div>
             </div>
         </div>
@@ -122,8 +131,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 box-contact-form">
 
-                <form id="contact-form" method="post" action="#">
-
+                <form id="contact-form" method="post" action="{% url 'save' %}">
+                    {% csrf_token %}
                     <div class="messages"></div>
 
                     <div class="controls">
@@ -156,7 +165,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button class="btn btn-send" value="">Send message</button>
+                                <button class="btn btn-send" type="submit" value="submit" id="sent">Send Message</button>
                             </div>
                         </div>
                     </div>
@@ -164,7 +173,6 @@
                 </form>
 
             </div>
-
         </div>
     </div>
 </div>

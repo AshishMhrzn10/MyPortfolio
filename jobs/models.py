@@ -30,10 +30,10 @@ class RecentWork(models.Model):
         return self.title
 
 
-class Client(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Client name")
-    description = models.TextField(verbose_name="Clent say") 
-    image = models.ImageField(upload_to='clents/', default="default.png")
+class Contact(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.CharField(max_length=100)
+    message = models.TextField()
 
     def __str__(self):
         return self.name
