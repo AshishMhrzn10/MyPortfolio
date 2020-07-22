@@ -4,9 +4,12 @@ from .models import *
 # Create your views here.
 
 def home(request):
-    about = About.objects.get()
-    skills = Skill.objects.all().order_by('id')
-    works = RecentWork.objects.all()
+    try:
+        about = About.objects.get()
+        skills = Skill.objects.all().order_by('id')
+        works = RecentWork.objects.all()
+    except:
+        pass
     return render(request,'home.html',{'about':about,'skills':skills,'works':works})
 
 def saveContact(request):
