@@ -12,9 +12,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-#new
-import django_heroku
-import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -28,7 +25,7 @@ SECRET_KEY = 'q(+(y6gx_31_$)7eh8=eq8p2v+7$nxoncpcu7qf&29b_zf3)$('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ashishmaharjan.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -44,7 +41,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,17 +76,14 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         # 'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': 'postgres',
         # 'USER': 'postgres',
-        # 'PASSWORD': 'Trio@MSN10',
+        # 'PASSWORD': '***',
         # 'HOST': 'localhost',
         # 'PORT': '5432',
-
-        'default':dj_database_url.config()
     }
 }
 
@@ -139,8 +132,3 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# prod_db = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(prod_db)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-django_heroku.settings(locals())
